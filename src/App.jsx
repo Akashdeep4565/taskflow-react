@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm.jsx";
 import TaskList from "./components/TaskList.jsx";
+import FilterButtons from "./components/FilterButtons.jsx";
+
 
 export default function App() {
   // Load from LocalStorage
@@ -45,11 +47,8 @@ export default function App() {
       <TaskForm addTask={addTask} />
 
       {/* Filter Buttons */}
-      <div style={{ margin: "15px 0" }}>
-        <button onClick={() => setFilter("all")}>All</button>{" "}
-        <button onClick={() => setFilter("active")}>Active</button>{" "}
-        <button onClick={() => setFilter("completed")}>Completed</button>
-      </div>
+     <FilterButtons filter={filter} setFilter={setFilter} />
+
 
       <TaskList
         tasks={filteredTasks}
