@@ -40,21 +40,20 @@ export default function App() {
     return true; // all
   });
 
-  return (
-    <div style={{ padding: "40px", fontFamily: "Arial", maxWidth: "500px" }}>
-      <h1>TaskFlow (React)</h1>
+    return (
+  <div className="app">
+    <h1>TaskFlow (React)</h1>
 
-      <TaskForm addTask={addTask} />
+    <TaskForm addTask={addTask} />
 
-      {/* Filter Buttons */}
-     <FilterButtons filter={filter} setFilter={setFilter} />
+    <FilterButtons filter={filter} setFilter={setFilter} />
 
+    <TaskList
+      tasks={filteredTasks}
+      toggleTask={toggleTask}
+      removeTask={removeTask}
+    />
+  </div>
+);
 
-      <TaskList
-        tasks={filteredTasks}
-        toggleTask={toggleTask}
-        removeTask={removeTask}
-      />
-    </div>
-  );
 }

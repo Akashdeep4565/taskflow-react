@@ -1,42 +1,119 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Global */
+body {
+  background: #f1f5f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* App container */
+/* Card entrance animation */
+.app {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  animation: fadeSlideIn 0.6s ease-out;
 }
 
-@keyframes logo-spin {
+@keyframes fadeSlideIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+/* Form */
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
-.card {
-  padding: 2em;
+input,
+select,
+button {
+  padding: 6px 10px;
 }
 
-.read-the-docs {
-  color: #888;
+button {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+
+/* Filters */
+.filters {
+  margin: 15px 0;
+}
+
+.filters button {
+  margin-right: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #f1f5f9;
+}
+
+.filters .active {
+  background: #2563eb;
+  color: white;
+}
+
+/* Task list */
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  background: #f8fafc;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Priority strip */
+li.high {
+  border-left: 6px solid #dc2626;
+}
+li.medium {
+  border-left: 6px solid #ca8a04;
+}
+li.low {
+  border-left: 6px solid #16a34a;
+}
+
+/* Completed task */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+/* Background gradient */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f2fe, #f1f5f9);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
